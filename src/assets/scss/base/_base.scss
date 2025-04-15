@@ -1,0 +1,11 @@
+@import '../abstracts/themes';
+
+@include theme-styles(light);
+@include theme-styles(dark);
+
+body {
+   
+    font-family: sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}

@@ -1,0 +1,46 @@
+// 顏色變數
+$primary: #1890FF;
+$light: #D9D9D9;
+$dark: #1C1E21;
+$white: #fff;
+$black: #000;
+$light-gray: #F0F2F5;
+$dark-gray: #2e2e2e;
+$card-shadow-light: #00000040;
+$card-shadow-dark: #ffffff33;
+
+
+
+// 顏色主題
+$themes: (
+    light: (bg-body: $light-gray,
+        header-bg:$dark,
+        header-color:$white,
+        sidebar-bg:$white,
+        text-body: $dark,
+        primary: $primary,
+        card-bg: $white,
+        card-color: $dark-gray,
+        card-shadow: $card-shadow-light ),
+    dark: (bg-body: $dark-gray,
+        header-bg:$white,
+        header-color:$dark,
+        sidebar-bg:$dark,
+        text-body: $light-gray,
+        primary: $primary,
+
+        card-bg:$black,
+        card-color: $light-gray,
+        card-shadow: $card-shadow-dark )
+);
+
+
+@mixin theme-styles($theme-name) {
+    $theme: map-get($themes, $theme-name);
+
+    .theme-#{$theme-name} {
+        @each $key, $val in $theme {
+            --color-#{$key}: #{$val};
+        }
+    }
+}

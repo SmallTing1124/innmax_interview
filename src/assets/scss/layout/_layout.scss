@@ -1,0 +1,103 @@
+.btn-toggle{
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    padding: 16px 24px;
+}
+
+.wrapper {
+    display: flex;
+     background-color: var(--color-bg-body);
+    color: var(--color-text-body);
+}
+
+.sidebar {
+    width: 200px;
+    flex: 0 1 auto;
+    background-color: var(--color-sidebar-bg);
+    height: 100vh;
+
+    .brand {
+        padding: 18px 24px;
+
+        .logo {
+            font-size: 24px;
+            background-color: $light;
+            color: $dark;
+            text-align: center;
+        }
+    }
+
+    .nav-link {
+        display: block;
+        text-decoration: none;
+
+        position: relative;
+        padding-left: 24px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        color: var(--color-text-body);
+
+        &.active {
+            color: var(--color-primary);
+
+            &::before,
+            &::after {
+                content: '';
+                width: 5px;
+                height: 100%;
+                background-color: var(--color-primary);
+                position: absolute;
+                top: 0;
+            }
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
+        }
+    }
+}
+
+.contentWrapper {
+    flex-grow: 1;
+    width: calc(100vw - 200px);
+}
+
+.pageHeader {
+    background-color: var(--color-header-bg);
+    color: var(--color-header-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 36px;
+
+    .pageTitle,
+    .userName {
+        opacity: 0.6;
+    }
+}
+
+.cardGrid {
+    padding: 72px 111px;
+    display: grid;
+    column-gap: 111px;
+    row-gap: 109px;
+    grid-template-columns: repeat(3, 1fr);
+
+
+    .card {
+        background-color: var(--color-card-bg);
+        color: var(--color-card-color);
+        min-height: 300px;
+        box-shadow: 0px 8px 10px 0px #00000040;
+        transition: 0.2s ease;
+
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
